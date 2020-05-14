@@ -11,6 +11,9 @@ public class BikerAngerScript : MonoBehaviour
     [SerializeField]
     private bool order;
 
+    [SerializeField]
+    private float ragePerSecond = 0.75f;
+
     protected GameObject RageBar;
     protected Healthbar RageBarScript;
     protected Image BgBar;
@@ -23,6 +26,7 @@ public class BikerAngerScript : MonoBehaviour
         RageBarScript = RageBar.GetComponent<Healthbar>();
         RageBarScript.health = 0;
         RageBarScript.regenerateHealth = false;
+        RageBarScript.healthPerSecond = ragePerSecond;
         BgBar = RageBar.GetComponentInChildren<Image>();
         FilledBar = BgBar.GetComponentInChildren<Image>();
         Debug.Log(RageBar.transform.position);
