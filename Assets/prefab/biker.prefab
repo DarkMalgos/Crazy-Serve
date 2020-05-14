@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: -5731109458755182186}
   m_Layer: 0
   m_Name: biker
-  m_TagString: Untagged
+  m_TagString: Pnj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabAngerBar: {fileID: 4443245377182067569, guid: b4d01732fd612834d843dabdf6eb7d17,
     type: 3}
-  order: 0
+  order: 1
+  ragePerSecond: 0
 --- !u!1 &3303095317115882423
 GameObject:
   m_ObjectHideFlags: 0

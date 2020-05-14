@@ -2,30 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AngerScript : MonoBehaviour
+public class AngerScript : MonoBehaviour
 {
 
     [SerializeField]
-    protected int CurrentAnger;
+    private GameObject BagarreAnimation;
 
-    protected int MaxAnger;
+    protected int angerZone = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        CurrentAnger = 0;
-    }
-
-
-    public virtual void updateAnger(int nb)
-    {
-        CurrentAnger += nb;
-
-        if(CurrentAnger >= 100)
+        Debug.Log("anger zone " + angerZone);
+        if (angerZone > 1)
         {
-
+            StartWar();
         }
     }
 
-    public abstract void Anger();
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "pnj")
+        {
+            if (other.gameObject.GetComponent<BikerAngerScript>().GetHealthbar().health == 100)
+            {
+                ++angerZone;
+            }
+        }
+    }
+
+    private void StartWar()
+    {
+        Instantiate(BagarreAnimation);
+    }
 }

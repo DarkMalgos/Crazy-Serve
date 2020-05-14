@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: -8116714983769739984}
   m_Layer: 0
   m_Name: Chef biker
-  m_TagString: Untagged
+  m_TagString: Pnj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,3 +454,4 @@ MonoBehaviour:
   prefabAngerBar: {fileID: 4443245377182067569, guid: b4d01732fd612834d843dabdf6eb7d17,
     type: 3}
   order: 0
+  ragePerSecond: 0.75

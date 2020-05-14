@@ -12,10 +12,10 @@ public class BikerAngerScript : MonoBehaviour
     private bool order;
 
     [SerializeField]
-    private float ragePerSecond = 0.75f;
+    private float ragePerSecond = 0.75F;
 
     protected GameObject RageBar;
-    protected Healthbar RageBarScript;
+    private Healthbar RageBarScript;
     protected Image BgBar;
     protected Image FilledBar;
 
@@ -34,12 +34,19 @@ public class BikerAngerScript : MonoBehaviour
         Debug.Log(FilledBar.transform.position);
     }
 
+    public Healthbar GetHealthbar()
+    {
+        return RageBarScript;
+    }
+
     private void Update()
     {
         RageBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 3, 0));
         if (order)
         {
+            Debug.Log(RageBarScript.healthPerSecond);
             RageBarScript.regenerateHealth = true;
+            RageBarScript.healthPerSecond = ragePerSecond;
         }
     }
 }

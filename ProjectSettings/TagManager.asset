@@ -10,6 +10,8 @@ TagManager:
   - Machine Verte
   - Machine Rouge
   - Machine Bleue
+  - FxTemporaire
+  - Pnj
   layers:
   - Default
   - TransparentFX
