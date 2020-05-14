@@ -106,5 +106,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d632e238d38a9f4396a786bd466b7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabBoissonRouge: {fileID: 6531859028891817490, guid: 5e0cc6b3408d48448956a4c299e36137,
+  PrefabBoissonRouge: {fileID: 7200927917085466066, guid: a84a636a35a83fe408bd4b3d8c2b8058,
     type: 3}
