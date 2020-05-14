@@ -417,7 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6640727996963266732}
   - component: {fileID: 5020189440503147634}
-  - component: {fileID: 4384192869859701327}
+  - component: {fileID: 459855823989587414}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -458,7 +458,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &4384192869859701327
+--- !u!114 &459855823989587414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -467,8 +467,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6640727996963266733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92324e7bdd4dfcd4b9aa2447ac0ad5e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fe32115483b148468423125c91bdc94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 700
-  RotationSpeed: 100
+  RotationSpeed: 200
