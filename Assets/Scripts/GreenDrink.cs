@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class GreenDrink : MonoBehaviour
 {
-[SerializeField]
+    [SerializeField]
     private GameObject PrefabBoissonVerte;
+
+    [SerializeField]
+    private Canvas loadingCanvas;
 
     private GameObject plate;
 
@@ -15,10 +18,11 @@ public class GreenDrink : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.Space) && !isPickUp && tag == "Machine Verte"){
-                    isPickUp = true;
-                    GameObject BoissonVerte = Instantiate(PrefabBoissonVerte);
-                    BoissonVerte.transform.SetParent(this.plate.transform);
-                    BoissonVerte.transform.localPosition = new Vector2(-0.3f,0);
+            loadingCanvas.enabled = true;
+            isPickUp = true;
+            GameObject BoissonVerte = Instantiate(PrefabBoissonVerte);
+            BoissonVerte.transform.SetParent(this.plate.transform);
+            BoissonVerte.transform.localPosition = new Vector2(-0.3f,0);
         }
     }
 
