@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Boisson Rouge
+  - Boisson Verte
+  - Boisson Bleue
+  - Machine Verte
+  - Machine Rouge
+  - Machine Bleue
   layers:
   - Default
   - TransparentFX

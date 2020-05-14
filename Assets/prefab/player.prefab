@@ -416,9 +416,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6640727996963266732}
+  - component: {fileID: 5020189440503147634}
+  - component: {fileID: 4384192869859701327}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,3 +442,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &5020189440503147634
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640727996963266733}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &4384192869859701327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640727996963266733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92324e7bdd4dfcd4b9aa2447ac0ad5e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1500
+  RotationSpeed: 200
+  PrefabBoissonVerte: {fileID: 7516147023265018176, guid: 9122802f90381f84d8b8a93daaf9717a,
+    type: 3}
+  PrefabBoissonBleue: {fileID: 8385242052075035819, guid: dfa07040f3b61f648bc8ad1291f6cbdb,
+    type: 3}
+  PrefabBoissonRouge: {fileID: 7200927917085466066, guid: a84a636a35a83fe408bd4b3d8c2b8058,
+    type: 3}
