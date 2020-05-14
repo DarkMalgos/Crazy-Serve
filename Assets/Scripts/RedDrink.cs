@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueDrink : MonoBehaviour
+public class RedDrink : MonoBehaviour
 {
     [SerializeField]
-    private GameObject PrefabBoissonBleue;
+    private GameObject PrefabBoissonRouge;
 
     private GameObject plate;
 
@@ -14,24 +14,23 @@ public class BlueDrink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space) && !isPickUp && tag == "Machine Bleue"){
+        if(Input.GetKey(KeyCode.Space) && !isPickUp && tag == "Machine Rouge"){
                     isPickUp = true;
-                    GameObject BoissonBleue = Instantiate(PrefabBoissonBleue);
-                    BoissonBleue.transform.SetParent(plate.transform);      
+                    GameObject BoissonRouge = Instantiate(PrefabBoissonRouge);
+                    BoissonRouge.transform.SetParent(this.plate.transform);
+                    BoissonRouge.transform.localPosition = new Vector2(0.3f,0);          
         }
     }
 
     private void OnCollisionEnter(Collision collision){
-        Debug.Log(collision.gameObject);
         if(collision.transform.tag == "Player"){
             isPickUp = false;
             for (int i = 0; i < collision.transform.childCount; i++)
             {
                string child = collision.transform.GetChild(i).gameObject.name;
-                if(child == "plate" && collision.transform.GetChild(i).gameObject.transform.childCount == 0)
+                if(child == "plate" && collision.transform.GetChild(i).gameObject.transform.childCount <= 3)
                 {
-                    Debug.Log(collision.transform.GetChild(i).gameObject);
-                    plate = collision.transform.GetChild(i).gameObject;
+                    this.plate = collision.transform.GetChild(i).gameObject;
                 }
             }
         }

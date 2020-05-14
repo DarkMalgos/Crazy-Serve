@@ -470,11 +470,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92324e7bdd4dfcd4b9aa2447ac0ad5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1500
-  RotationSpeed: 200
-  PrefabBoissonVerte: {fileID: 7516147023265018176, guid: 9122802f90381f84d8b8a93daaf9717a,
-    type: 3}
-  PrefabBoissonBleue: {fileID: 8385242052075035819, guid: dfa07040f3b61f648bc8ad1291f6cbdb,
-    type: 3}
-  PrefabBoissonRouge: {fileID: 7200927917085466066, guid: a84a636a35a83fe408bd4b3d8c2b8058,
-    type: 3}
+  Speed: 700
+  RotationSpeed: 100
