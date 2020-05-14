@@ -1,21 +1,41 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class BikerAngerScript : AngerScript
+public class BikerAngerScript : MonoBehaviour
 {
     [SerializeField]
-    public Image AngerBar;
+    private GameObject prefabAngerBar;
 
-    public override void Anger()
+    [SerializeField]
+    private bool order;
+
+    protected GameObject RageBar;
+    protected Healthbar RageBarScript;
+    protected Image BgBar;
+    protected Image FilledBar;
+
+
+    private void Start()
     {
-
+        RageBar = Instantiate(prefabAngerBar, FindObjectOfType<Canvas>().transform);
+        RageBarScript = RageBar.GetComponent<Healthbar>();
+        RageBarScript.health = 0;
+        RageBarScript.regenerateHealth = false;
+        BgBar = RageBar.GetComponentInChildren<Image>();
+        FilledBar = BgBar.GetComponentInChildren<Image>();
+        Debug.Log(RageBar.transform.position);
+        Debug.Log(BgBar.transform.position);
+        Debug.Log(FilledBar.transform.position);
     }
 
-    public override void updateAnger(int nb)
+    private void Update()
     {
-
+        RageBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 3, 0));
+        if (order)
+        {
+            RageBarScript.regenerateHealth = true;
+        }
     }
 }

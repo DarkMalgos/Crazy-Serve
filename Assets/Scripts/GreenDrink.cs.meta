@@ -3,7 +3,10 @@ guid: 65ced41172bc95a48879951efdd66634
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - PrefabBoissonVerte: {fileID: 7516147023265018176, guid: 9122802f90381f84d8b8a93daaf9717a,
+      type: 3}
+  - loadingCanvas: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -3,7 +3,9 @@ guid: 94c4030f33ceb8849b9015ee53d28a12
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - PrefabBoissonRouge: {fileID: 7200927917085466066, guid: a84a636a35a83fe408bd4b3d8c2b8058,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

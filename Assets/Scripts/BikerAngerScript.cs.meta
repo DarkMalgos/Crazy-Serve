@@ -3,7 +3,9 @@ guid: f306b8ed8027a384880bc3a6371402e0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - prefabAngerBar: {fileID: 939408583728235654, guid: 539e37650ca8d9140aae960cb9b0f676,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
