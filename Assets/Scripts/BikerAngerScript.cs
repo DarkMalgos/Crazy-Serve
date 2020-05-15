@@ -15,7 +15,7 @@ public class BikerAngerScript : MonoBehaviour
     private float ragePerSecond = 0.75F;
 
     protected GameObject RageBar;
-    private Healthbar RageBarScript;
+    public Healthbar RageBarScript;
     protected Image BgBar;
     protected Image FilledBar;
 
@@ -48,5 +48,20 @@ public class BikerAngerScript : MonoBehaviour
             RageBarScript.regenerateHealth = true;
             RageBarScript.healthPerSecond = ragePerSecond;
         }
+
+        if (order && !RageBarScript.regenerateHealth && RageBarScript.health > 0)
+        {
+            RageBarScript.healthPerSecond = -100;
+        } else if (order && !RageBarScript.regenerateHealth)
+        {
+            RageBarScript.regenerateHealth = false;
+            RageBarScript.healthPerSecond = ragePerSecond;
+
+        }
+    }
+
+    public void Reset()
+    {
+        order = false;
     }
 }
