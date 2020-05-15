@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3303095316252611527}
   - component: {fileID: -5731109458755182186}
   - component: {fileID: 3208473397787289638}
+  - component: {fileID: 8494210889888506846}
   m_Layer: 0
   m_Name: biker
   m_TagString: Pnj
@@ -97,6 +98,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8494210889888506846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303095316252611524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feaebd52b29dcec439c30fe755923ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeltaTimeOrder: 10
+  PrctRedDrink: 20
+  PrctBlueDrink: 50
+  DrinkChoicePrefab: {fileID: 2246965620388098426, guid: 0ef260b50a59541458426f1e2b00c759,
+    type: 3}
+  DrinkManager: {fileID: 4617946931488145126, guid: 09182ba459e80bf469af10219eae9ed5,
+    type: 3}
 --- !u!1 &3303095317115882423
 GameObject:
   m_ObjectHideFlags: 0

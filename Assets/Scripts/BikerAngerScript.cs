@@ -9,7 +9,7 @@ public class BikerAngerScript : MonoBehaviour
     private GameObject prefabAngerBar;
 
     [SerializeField]
-    private bool order;
+    public bool order;
 
     [SerializeField]
     private float ragePerSecond = 0.75F;
@@ -29,9 +29,9 @@ public class BikerAngerScript : MonoBehaviour
         RageBarScript.healthPerSecond = ragePerSecond;
         BgBar = RageBar.GetComponentInChildren<Image>();
         FilledBar = BgBar.GetComponentInChildren<Image>();
-        Debug.Log(RageBar.transform.position);
-        Debug.Log(BgBar.transform.position);
-        Debug.Log(FilledBar.transform.position);
+        //Debug.Log(RageBar.transform.position);
+        //Debug.Log(BgBar.transform.position);
+        //Debug.Log(FilledBar.transform.position);
     }
 
     public Healthbar GetHealthbar()
@@ -44,7 +44,7 @@ public class BikerAngerScript : MonoBehaviour
         RageBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 3, 0));
         if (order)
         {
-            Debug.Log(RageBarScript.healthPerSecond);
+            //Debug.Log(RageBarScript.healthPerSecond);
             RageBarScript.regenerateHealth = true;
             RageBarScript.healthPerSecond = ragePerSecond;
         }
