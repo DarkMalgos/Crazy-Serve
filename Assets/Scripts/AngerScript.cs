@@ -12,6 +12,7 @@ public class AngerScript : MonoBehaviour
     private List<GameObject> memberZone = new List<GameObject>();
     private List<Healthbar> memberRageBar = new List<Healthbar>();
 
+
     private void Update()
     {
         for (int i=0; i < memberRageBar.Count; i++)
@@ -46,14 +47,17 @@ public class AngerScript : MonoBehaviour
     {
         memberRageBar.Clear();
         GameObject fight = Instantiate(BagarreAnimation, transform);
-        fight.transform.localPosition = new Vector3(4, 0, -2);
+        fight.transform.localPosition = new Vector3(3, 0, -2);
         Destroy(fight, 10);
         resetAngerZone();
     }
 
     private void resetAngerZone()
     {
-        foreach(GameObject member in memberZone)
+        foreach (GameObject member in memberZone)
+        {
             member.GetComponentInParent<BikerAngerScript>().Reset();
+            memberRageBar.Add(member.GetComponentInParent<BikerAngerScript>().RageBarScript);
+        }
     }
 }
