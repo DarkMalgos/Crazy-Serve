@@ -35,11 +35,11 @@ public class DrinkChoiceScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DeltaTimeOrder = Random.Range(10,120);
+        //DeltaTimeOrder = Random.Range(10,120);
         BikerAnger = GetComponentInParent<BikerAngerScript>();
         DrinkChoiceColor = Instantiate(DrinkChoicePrefab, FindObjectOfType<Canvas>().transform);
         DrinkColor = DrinkChoiceColor.GetComponentInChildren<Image>();
-        DrinkHandler = DrinkManager.GetComponent<HandleDrink>();
+        DrinkHandler = DrinkManager.GetComponentInChildren<HandleDrink>();
     }
 
     // Update is called once per frame
@@ -52,13 +52,13 @@ public class DrinkChoiceScript : MonoBehaviour
             DrinkOrder = Random.Range(1,100);
             if(DrinkOrder <= PrctRedDrink){
                 DrinkColor.color = Color.red;
-                DrinkHandler.AddOrder(this.transform.name,"Boisson Rouge");
-            }else if(DrinkOrder > PrctRedDrink && DrinkOrder <= PrctBlueDrink){
+                DrinkHandler.AddOrder(transform.name,"Boisson Rouge");
+            } else if(DrinkOrder > PrctRedDrink && DrinkOrder <= (PrctBlueDrink + PrctRedDrink)) {
                 DrinkColor.color = Color.blue;
-                DrinkHandler.AddOrder(this.transform.name,"Boisson Bleue");
-            }else if(DrinkOrder > PrctBlueDrink){
+                DrinkHandler.AddOrder(transform.name,"Boisson Bleue");
+            } else {
                 DrinkColor.color = Color.green;
-                DrinkHandler.AddOrder(this.transform.name,"Boisson Verte");
+                DrinkHandler.AddOrder(transform.name,"Boisson Verte");
             }
             BikerAnger.order = true;
             time = 0;

@@ -4621,6 +4621,11 @@ PrefabInstance:
       propertyPath: order
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5731109458755182186, guid: 3f30f45a7963e3d48ba91e301cf8bce9,
+        type: 3}
+      propertyPath: ragePerSecond
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3303095316252611524, guid: 3f30f45a7963e3d48ba91e301cf8bce9,
         type: 3}
       propertyPath: m_Name
@@ -4685,6 +4690,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494210889888506846, guid: 3f30f45a7963e3d48ba91e301cf8bce9,
+        type: 3}
+      propertyPath: DeltaTimeOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494210889888506846, guid: 3f30f45a7963e3d48ba91e301cf8bce9,
+        type: 3}
+      propertyPath: PrctRedDrink
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494210889888506846, guid: 3f30f45a7963e3d48ba91e301cf8bce9,
+        type: 3}
+      propertyPath: PrctBlueDrink
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f30f45a7963e3d48ba91e301cf8bce9, type: 3}
@@ -11146,6 +11166,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 393546338428511237, guid: a142f56c63392a843a6d2a451601391f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8179481434776575868, guid: a142f56c63392a843a6d2a451601391f,
         type: 3}
       propertyPath: m_Name

@@ -82,6 +82,7 @@ MonoBehaviour:
     type: 3}
   order: 1
   ragePerSecond: 0
+  RageBarScript: {fileID: 0}
 --- !u!54 &3208473397787289638
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -111,8 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeltaTimeOrder: 10
-  PrctRedDrink: 20
-  PrctBlueDrink: 50
+  PrctRedDrink: 25
+  PrctBlueDrink: 35
   DrinkChoicePrefab: {fileID: 2246965620388098426, guid: 0ef260b50a59541458426f1e2b00c759,
     type: 3}
   DrinkManager: {fileID: 4617946931488145126, guid: 09182ba459e80bf469af10219eae9ed5,
