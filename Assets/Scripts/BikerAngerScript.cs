@@ -48,20 +48,14 @@ public class BikerAngerScript : MonoBehaviour
             RageBarScript.regenerateHealth = true;
             RageBarScript.healthPerSecond = ragePerSecond;
         }
-
-        if (order && !RageBarScript.regenerateHealth && RageBarScript.health > 0)
-        {
-            RageBarScript.healthPerSecond = -100;
-        } else if (order && !RageBarScript.regenerateHealth)
-        {
-            RageBarScript.regenerateHealth = false;
-            RageBarScript.healthPerSecond = ragePerSecond;
-
-        }
     }
 
     public void Reset()
     {
+        Debug.Log("hello");
         order = false;
+        RageBarScript.regenerateHealth = false;
+        RageBarScript.health = 0;
+        Debug.Log(RageBarScript.health);
     }
 }

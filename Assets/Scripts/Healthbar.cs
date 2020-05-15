@@ -65,9 +65,10 @@ public class Healthbar : MonoBehaviour {
         healthPercentage = int.Parse((Mathf.Round(maximumHealth * (health / 100f))).ToString());
 
         // If the player's health is below the minimum health, then set it to the minimum health:
-        if (health < minimumHealth)
+        if (health <= minimumHealth)
         {
             health = minimumHealth;
+            healthbarDisplay.value = health;
         }
 
         // If the player's health is above the maximum health, then set it to the maximum health:
