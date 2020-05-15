@@ -35,6 +35,7 @@ public class BlueDrink : MonoBehaviour
         RageBarScript.highHealthColor = new Color(1f, 0.259434f, 0.259434f); 
         BgBar = RageBar.GetComponentInChildren<Image>();
         FilledBar = BgBar.GetComponentInChildren<Image>();
+        RageBar.SetActive(false);
     }
 
 
@@ -42,16 +43,20 @@ public class BlueDrink : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.Space) && !isPickUp && tag == "Machine Bleue"){
-            if(RageBarScript.health == 0){
-                 RageBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 3, 0));
+            if(RageBarScript.health == 0)
+            {
+                RageBar.SetActive(true);
+                RageBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 3, 0));
                  RageBarScript.regenerateHealth = true;
             }else if (RageBarScript.health == 100){
-             isPickUp = true;
-             GameObject BoissonBleue = Instantiate(PrefabBoissonBleue);
-             BoissonBleue.transform.SetParent(this.plate.transform);
-             BoissonBleue.transform.localPosition = new Vector2(-0.3f,0);
-             RageBarScript.regenerateHealth = false;
-             RageBarScript.health = 0;
+                isPickUp = true;
+                GameObject BoissonBleue = Instantiate(PrefabBoissonBleue);
+                BoissonBleue.transform.SetParent(this.plate.transform);
+                BoissonBleue.transform.localPosition = new Vector2(-0.3f,0);
+                RageBarScript.regenerateHealth = false;
+                RageBarScript.health = 0;
+                RageBar.SetActive(false);
+                plate.GetComponentInParent<ServingScript>().drinkOnPlate.Add("blue");
             }
         }
     }

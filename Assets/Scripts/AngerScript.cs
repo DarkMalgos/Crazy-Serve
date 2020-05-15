@@ -39,7 +39,7 @@ public class AngerScript : MonoBehaviour
         {
             GameObject pnj = other.gameObject;
             memberZone.Add(pnj);
-            memberRageBar.Add(pnj.GetComponentInParent<BikerAngerScript>().RageBarScript);
+            memberRageBar.Add(pnj.GetComponentInParent<BikerAngerScript>().GetRageBar());
         }
     }
 
@@ -57,7 +57,8 @@ public class AngerScript : MonoBehaviour
         foreach (GameObject member in memberZone)
         {
             member.GetComponentInParent<BikerAngerScript>().Reset();
-            memberRageBar.Add(member.GetComponentInParent<BikerAngerScript>().RageBarScript);
+            member.GetComponentInParent<DrinkChoiceScript>().Reset();
+            memberRageBar.Add(member.GetComponentInParent<BikerAngerScript>().GetRageBar());
         }
     }
 }
