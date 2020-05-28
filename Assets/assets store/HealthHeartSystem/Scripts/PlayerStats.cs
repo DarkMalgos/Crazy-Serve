@@ -3,6 +3,7 @@
  */
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -64,6 +65,6 @@ public class PlayerStats : MonoBehaviour
         if (onHealthChangedCallback != null)
             onHealthChangedCallback.Invoke();
         if (health == 0)
-            Debug.Log("you loose");
+            SceneManager.LoadScene("menue");
     }
 }
