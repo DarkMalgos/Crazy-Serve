@@ -6,18 +6,24 @@ public class ServingScript : MonoBehaviour
 {
     private bool isServing = false;
     private GameObject client;
-    public List<string> drinkOnPlate = new List<string>(); 
+    public List<GameObject> drinkOnPlate = new List<GameObject>(); 
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.Space) && isServing)
         {
-            foreach (string drink in drinkOnPlate)
-            {
-                if (drink == client.GetComponent<DrinkChoiceScript>().colorOrder)
+            for (int i = 0; i< drinkOnPlate.Count; i++)
+            {                
+                if (drinkOnPlate[i].tag == client.GetComponent<DrinkChoiceScript>().DrinkChoice)
                 {
-
+                    Destroy(drinkOnPlate[i]);
+                    drinkOnPlate.RemoveAt(i);
+                    --i;
+                    isServing = false;
+                    client.GetComponent<BikerAngerScript>().CalmDown();
+                    client.GetComponent<DrinkChoiceScript>().Reset();
+                    break;
                 }
             }
         }

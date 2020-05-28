@@ -28,6 +28,7 @@ public class DrinkChoiceScript : MonoBehaviour
     private HandleDrink DrinkHandler;
 
     private GameObject DrinkChoiceColor;
+
     private GameObject AngerBar;
 
     private Image DrinkColor;
@@ -36,7 +37,7 @@ public class DrinkChoiceScript : MonoBehaviour
 
     private float time = 0;
 
-    public string colorOrder;
+    public string DrinkChoice;
 
     // Start is called before the first frame update
     void Start()
@@ -57,30 +58,30 @@ public class DrinkChoiceScript : MonoBehaviour
             DrinkColor = DrinkChoiceColor.GetComponentInChildren<Image>();
             DrinkChoiceColor.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(.5F, 3, 0));
             DrinkOrder = Random.Range(1,100);
+
             if(DrinkOrder <= PrctRedDrink){
                 DrinkColor.color = Color.red;
-                colorOrder = "red";
-                DrinkHandler.AddOrder(transform.name,"Boisson Rouge");
+                BikerAnger.order = true;
+                DrinkChoice = "Boisson Rouge";
             } else if(DrinkOrder <= PrctRedDrink && DrinkOrder <= (PrctBlueDrink + PrctRedDrink)) {
                 DrinkColor.color = Color.blue;
-                colorOrder = "blue";
-                DrinkHandler.AddOrder(transform.name,"Boisson Bleue");
+                BikerAnger.order = true;
+                DrinkChoice = "Boisson Bleue";
             } else {
                 DrinkColor.color = Color.green;
-                colorOrder = "green";
-                DrinkHandler.AddOrder(transform.name,"Boisson Verte");
+                BikerAnger.order = true;
+                DrinkChoice = "Boisson Verte";
             }
-            BikerAnger.order = true;
             time = 0;
         }        
     }
 
     public void Reset()
     {
-        BikerAnger.order = false;
-        time = -1 * DeltaTimeCooldown;
+        time = 0;
+        DeltaTimeOrder = Random.Range(10,120);
         DestroyImmediate(DrinkChoiceColor);
         DestroyImmediate(DrinkColor);
-        colorOrder = null;
+        DrinkChoice = null;
     }
 }

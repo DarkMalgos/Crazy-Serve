@@ -59,4 +59,9 @@ public class BikerAngerScript : MonoBehaviour
         RageBarScript.health = 0;
         Debug.Log(RageBarScript.health);
     }
+
+    public void CalmDown(){
+        order = false;
+        RageBarScript.regenerateHealth = false;
+    }
 }

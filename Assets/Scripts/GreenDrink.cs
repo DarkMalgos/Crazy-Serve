@@ -21,6 +21,8 @@ public class GreenDrink : MonoBehaviour
 
     private GameObject plate;
 
+    private ServingScript servingScript;
+
     private bool isPickUp = true;
 
     void Start()
@@ -48,14 +50,25 @@ public class GreenDrink : MonoBehaviour
                 RageBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 3, 0));
                  RageBarScript.regenerateHealth = true;
             }else if (RageBarScript.health == 100){
-                isPickUp = true;
-                GameObject BoissonVerte = Instantiate(PrefabBoissonVerte);
-                BoissonVerte.transform.SetParent(this.plate.transform);
-                BoissonVerte.transform.localPosition = new Vector2(0,0);
-                RageBarScript.regenerateHealth = false;
-                RageBarScript.health = 0;
-                RageBar.SetActive(false);
-                plate.GetComponentInParent<ServingScript>().drinkOnPlate.Add("green");
+                if(servingScript.drinkOnPlate.Count < 3){
+                    isPickUp = true;
+                    RageBarScript.regenerateHealth = false;
+                    RageBarScript.health = 0;
+                    RageBar.SetActive(false);
+                    GameObject BoissonVerte = Instantiate(PrefabBoissonVerte);
+                    
+                    if(servingScript.drinkOnPlate.Count == 0){
+                        BoissonVerte.transform.SetParent(this.plate.transform.GetChild(0).gameObject.transform);
+                        BoissonVerte.transform.localPosition = new Vector2(0,0);
+                    }else if(servingScript.drinkOnPlate.Count == 1){
+                        BoissonVerte.transform.SetParent(this.plate.transform.GetChild(1).gameObject.transform);
+                        BoissonVerte.transform.localPosition = new Vector2(0,0);
+                    }else if(servingScript.drinkOnPlate.Count == 2){
+                        BoissonVerte.transform.SetParent(this.plate.transform.GetChild(2).gameObject.transform);
+                        BoissonVerte.transform.localPosition = new Vector2(0,0);
+                    }
+                    servingScript.drinkOnPlate.Add(BoissonVerte);
+                }
             }
         }
     }
@@ -66,9 +79,10 @@ public class GreenDrink : MonoBehaviour
             for (int i = 0; i < collision.transform.childCount; i++)
             {
                string child = collision.transform.GetChild(i).gameObject.name;
-                if(child == "plate" && collision.transform.GetChild(i).gameObject.transform.childCount <= 3)
+                if(child == "plate")
                 {
                     this.plate = collision.transform.GetChild(i).gameObject;
+                    servingScript = plate.GetComponentInParent<ServingScript>();
                 }
             }
         }

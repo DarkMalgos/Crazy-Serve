@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class HandleDrink : MonoBehaviour
 {
-    public Dictionary<string,string> OrderManager;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        OrderManager = new Dictionary<string, string>();
-    }
+    public Dictionary<string,string> OrderManager = new Dictionary<string, string>();
 
     public void AddOrder(string gameObjectName, string drinkTag){
-        //OrderManager.Add(gameObjectName,drinkTag);
+        Debug.Log(OrderManager);
+        this.OrderManager.Add(gameObjectName,drinkTag);
         Debug.Log(gameObjectName);
         Debug.Log(drinkTag);
     }

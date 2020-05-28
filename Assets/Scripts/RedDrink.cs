@@ -20,8 +20,9 @@ public class RedDrink : MonoBehaviour
     protected Image BgBar;
     protected Image FilledBar;
 
-
     private GameObject plate;
+
+    private ServingScript servingScript;
 
     private bool isPickUp = true;
 
@@ -49,14 +50,24 @@ public class RedDrink : MonoBehaviour
                  RageBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 3, 0));
                  RageBarScript.regenerateHealth = true;
             } else if (RageBarScript.health == 100) {
-                isPickUp = true;
-                GameObject BoissonRouge = Instantiate(PrefabBoissonRouge);
-                BoissonRouge.transform.SetParent(this.plate.transform);
-                BoissonRouge.transform.localPosition = new Vector2(0.3f,0);
-                RageBarScript.regenerateHealth = false;
-                RageBarScript.health = 0;
-                RageBar.SetActive(false);
-                plate.GetComponentInParent<ServingScript>().drinkOnPlate.Add("red");
+                if(servingScript.drinkOnPlate.Count < 3){
+                    isPickUp = true;
+                    RageBarScript.regenerateHealth = false;
+                    RageBarScript.health = 0;
+                    RageBar.SetActive(false);
+                    GameObject BoissonRouge = Instantiate(PrefabBoissonRouge);
+                    if(servingScript.drinkOnPlate.Count == 0){
+                        BoissonRouge.transform.SetParent(this.plate.transform.GetChild(0).gameObject.transform);
+                        BoissonRouge.transform.localPosition = new Vector2(0,0);
+                    }else if(servingScript.drinkOnPlate.Count == 1){
+                        BoissonRouge.transform.SetParent(this.plate.transform.GetChild(1).gameObject.transform);
+                        BoissonRouge.transform.localPosition = new Vector2(0,0);
+                    }else if(servingScript.drinkOnPlate.Count == 2){
+                        BoissonRouge.transform.SetParent(this.plate.transform.GetChild(2).gameObject.transform);
+                        BoissonRouge.transform.localPosition = new Vector2(0,0);
+                    }
+                    servingScript.drinkOnPlate.Add(BoissonRouge);
+                }           
             }       
         }
     }
@@ -67,9 +78,10 @@ public class RedDrink : MonoBehaviour
             for (int i = 0; i < collision.transform.childCount; i++)
             {
                string child = collision.transform.GetChild(i).gameObject.name;
-                if(child == "plate" && collision.transform.GetChild(i).gameObject.transform.childCount <= 3)
+                if(child == "plate")
                 {
                     this.plate = collision.transform.GetChild(i).gameObject;
+                    servingScript = plate.GetComponentInParent<ServingScript>();
                 }
             }
         }
