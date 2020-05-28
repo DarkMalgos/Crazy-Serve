@@ -184,7 +184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494575894848959015}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.085, z: 0}
+  m_LocalPosition: {x: 0, y: 0.869, z: 0.158}
   m_LocalScale: {x: 0.032522343, y: 0.032341, z: 0.01475}
   m_Children: []
   m_Father: {fileID: 8179481434776575869}
@@ -288,8 +288,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 60
-  m_Height: 80
+  m_Radius: 30
+  m_Height: 50
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1770296938403752180
@@ -843,7 +843,7 @@ MonoBehaviour:
     type: 3}
   DrinkManager: {fileID: 4617946931488145126, guid: 09182ba459e80bf469af10219eae9ed5,
     type: 3}
-  colorOrder: 
+  DrinkChoice: 
 --- !u!1 &8320258977833956986
 GameObject:
   m_ObjectHideFlags: 0

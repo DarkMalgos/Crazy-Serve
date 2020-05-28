@@ -370,7 +370,7 @@ MonoBehaviour:
     type: 3}
   DrinkManager: {fileID: 4617946931488145126, guid: 09182ba459e80bf469af10219eae9ed5,
     type: 3}
-  colorOrder: 
+  DrinkChoice: 
 --- !u!1 &4026185957809243566
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,8 +578,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 60
-  m_Height: 80
+  m_Radius: 30
+  m_Height: 50
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5326646247225480354

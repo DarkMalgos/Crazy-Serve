@@ -5153,6 +5153,11 @@ PrefabInstance:
       propertyPath: RotationSpeed
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5020189440503147634, guid: 12857fcc39a97984b8f14a903dc8c341,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 6640727996963266732, guid: 12857fcc39a97984b8f14a903dc8c341,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5161,7 +5166,7 @@ PrefabInstance:
     - target: {fileID: 6640727996963266732, guid: 12857fcc39a97984b8f14a903dc8c341,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6640727996963266732, guid: 12857fcc39a97984b8f14a903dc8c341,
         type: 3}
