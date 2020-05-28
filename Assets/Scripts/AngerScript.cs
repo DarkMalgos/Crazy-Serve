@@ -8,10 +8,21 @@ public class AngerScript : MonoBehaviour
     [SerializeField]
     private GameObject BagarreAnimation;
 
+    [SerializeField]
+    private GameObject lifeAction;
+
+    [SerializeField]
+    private float damage;
+
     protected int angerZone = 0;
     private List<GameObject> memberZone = new List<GameObject>();
     private List<Healthbar> memberRageBar = new List<Healthbar>();
+    private HealthBarHUDTester life;
 
+    private void Start()
+    {
+        life = lifeAction.GetComponent<HealthBarHUDTester>();
+    }
 
     private void Update()
     {
@@ -49,6 +60,7 @@ public class AngerScript : MonoBehaviour
         GameObject fight = Instantiate(BagarreAnimation, transform);
         fight.transform.localPosition = new Vector3(3, 0, -2);
         Destroy(fight, 10);
+        life.Hurt(damage);
         resetAngerZone();
     }
 
