@@ -3732,6 +3732,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5991509086309016972, guid: 864425ab1a0e9914fabab589ed85d89b,
+        type: 3}
+      propertyPath: healthPerSecond
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6032353336641842062, guid: 864425ab1a0e9914fabab589ed85d89b,
         type: 3}
       propertyPath: m_IsActive
@@ -6347,6 +6352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354612218976124960, guid: 58700252824df92499803277fffd7cf4,
+        type: 3}
+      propertyPath: healthPerSecond
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6100969332467335942, guid: 58700252824df92499803277fffd7cf4,
         type: 3}
@@ -9877,6 +9887,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5807587895786510538, guid: 5b36099ebbf0dac49bb205a10ca9c010,
+        type: 3}
+      propertyPath: healthPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7729257354196962589, guid: 5b36099ebbf0dac49bb205a10ca9c010,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10041,6 +10056,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 459855823989587414, guid: 12857fcc39a97984b8f14a903dc8c341,
+        type: 3}
+      propertyPath: Speed
+      value: 1250
+      objectReference: {fileID: 0}
+    - target: {fileID: 459855823989587414, guid: 12857fcc39a97984b8f14a903dc8c341,
+        type: 3}
+      propertyPath: RotationSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 4384192869859701327, guid: 12857fcc39a97984b8f14a903dc8c341,
         type: 3}
       propertyPath: PrefabBoissonBleue
@@ -10400,6 +10425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1646503236}
+  - component: {fileID: 1646503237}
   m_Layer: 0
   m_Name: floor
   m_TagString: Untagged
@@ -10451,6 +10477,19 @@ Transform:
   m_Father: {fileID: 1272900138}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1646503237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646503235}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1654022990
 PrefabInstance:
   m_ObjectHideFlags: 0

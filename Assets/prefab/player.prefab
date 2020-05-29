@@ -335,7 +335,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6640727995581741890}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -429,7 +429,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6640727996152486229}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -558,7 +558,7 @@ BoxCollider:
   m_GameObject: {fileID: 6640727996261593396}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 8, z: 1.0000002}
   m_Center: {x: 0.00000005960464, y: 0, z: -0.00000008940697}
@@ -721,8 +721,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe32115483b148468423125c91bdc94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 700
-  RotationSpeed: 200
+  Speed: 1250
+  RotationSpeed: 400
 --- !u!114 &246668027314095664
 MonoBehaviour:
   m_ObjectHideFlags: 0
