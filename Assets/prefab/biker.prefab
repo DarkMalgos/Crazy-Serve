@@ -333,7 +333,7 @@ MonoBehaviour:
   prefabAngerBar: {fileID: 4443245377182067569, guid: b4d01732fd612834d843dabdf6eb7d17,
     type: 3}
   order: 1
-  ragePerSecond: 0.25
+  ragePerSecond: 0.1
 --- !u!54 &3208473397787289638
 Rigidbody:
   m_ObjectHideFlags: 0
